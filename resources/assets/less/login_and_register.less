@@ -1,0 +1,105 @@
+/*
+ * Page: Login & Register
+ * ----------------------
+ */
+
+.login-logo,
+.register-logo {
+  font-size: 35px;
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: 300;
+  a {
+    color: #444;
+  };
+  img {
+      /*display: block;*/
+      position: relative;
+      -webkit-transition: all .4s linear;
+      transition: all .4s linear;
+      width: 60%;
+      height: auto;
+  }
+  &:hover img {
+      -ms-transform: scale(1.2) translateZ(0);
+      -webkit-transform: scale(1.2) translateZ(0);
+      /* transform: scale(1.2) translateZ(0); */
+  }
+}
+
+.login-page,
+.register-page {
+  background: @gray-lte;
+}
+
+.login-box,
+.register-box {
+  width: 360px;
+  margin: 7% auto;
+  @media (max-width: @screen-sm) {
+    width: 90%;
+    margin-top: 20px;
+  }
+}
+
+.login-box-body,
+.register-box-body {
+  background: #fff;
+  padding: 20px;
+  border-top: 0;
+  border-radius: 5px;
+  color: #666;
+  .form-control-feedback {
+    color: #CD7D37;
+  }
+  p {
+    color:#CD7D37;
+  };
+  a {
+    color: @link-color-two;
+    font-weight: normal;
+    border-radius: 0;
+    text-align:left;
+    padding-left: 0px !important;
+
+    &,
+    &:active,
+    &.active,
+    &[disabled],
+    fieldset[disabled] & {
+      background-color: transparent;
+      .box-shadow(none);
+    }
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+      border-color: transparent;
+    }
+    &:hover,
+    &:focus {
+      color: @link-hover-color-two;
+      text-decoration: @link-hover-decoration;
+      background-color: transparent;
+    }
+    &[disabled],
+    fieldset[disabled] & {
+      &:hover,
+      &:focus {
+        color: @btn-link-disabled-color;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.login-box-msg,
+.register-box-msg {
+  margin: 0;
+  text-align: center;
+  padding: 0 20px 20px 20px;
+}
+
+.social-auth-links {
+  margin: 10px 0;
+}
