@@ -98,13 +98,17 @@ class PayAddController extends Controller
     $id_proveedor = $request->identificador;
     $id_bank = $request->reg_bancos;
     $id_coin = $request->reg_coins;
-    $cuenta = $request->reg_cuenta;
     $clabe = $request->reg_clabe;
-    $referencia = $request->reg_reference;
+    $verf_cuenta = $request->reg_cuenta; //opcional
+    $verf_referencia = $request->reg_reference; //opcional
     $flag = 0;
-    if (empty($referencia)){
-      $referencia= '';
-    }
+
+    if (isset($cuenta)) { $cuenta = $verf_cuenta; }
+    else { $cuenta = ''; }
+
+    if (isset($verf_referencia)) { $referencia = $verf_referencia; }
+    else { $referencia = ''; }
+
     //Pregunto si existe proveedor y banco en prov_bco_ctas
     $count_bk = Prov_bco_cta::where('prov_id', $id_proveedor)->count();
     // $count_bk = DB::select('CALL px_prov_bco_ctas_exist(?,?)', array($id_proveedor,$id_bank));

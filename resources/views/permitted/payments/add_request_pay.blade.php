@@ -702,17 +702,17 @@
                   }
               }
           },
-          reg_cuenta: {
-            validators: {
-              notEmpty: {
-                message: 'The account number is required.'
-              },
-              stringLength: {
-                min: 4,
-                message: 'The account number must have at least 4 characters',
-              },
-            }
-          },
+          // reg_cuenta: {
+          //   validators: {
+          //     notEmpty: {
+          //       message: 'The account number is required.'
+          //     },
+          //     stringLength: {
+          //       min: 4,
+          //       message: 'The account number must have at least 4 characters',
+          //     },
+          //   }
+          // },
           reg_clabe: {
             validators: {
               notEmpty: {
@@ -724,17 +724,17 @@
               },
             }
           },
-          reg_reference: {
-            validators: {
-              notEmpty: {
-                message: 'The reference number is required.'
-              },
-              stringLength: {
-                min: 4,
-                message: 'The reference number must have at least 4 characters',
-              },
-            }
-          },
+          // reg_reference: {
+          //   validators: {
+          //     notEmpty: {
+          //       message: 'The reference number is required.'
+          //     },
+          //     stringLength: {
+          //       min: 4,
+          //       message: 'The reference number must have at least 4 characters',
+          //     },
+          //   }
+          // },
         }
       })
       .on('success.form.fv', function(e) {

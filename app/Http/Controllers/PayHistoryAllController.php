@@ -25,6 +25,7 @@ use App\Payments_states;
 use App\Payments_verticals;
 use App\Payments_way_pay;
 use App\Payments;
+use DateTime;
 
 class PayHistoryAllController extends Controller
 {
@@ -43,19 +44,17 @@ class PayHistoryAllController extends Controller
       return view('permitted.payments.history_all_requests_pay',compact('proveedor','vertical', 'currency', 'way', 'area', 'application', 'options', 'classification', 'financing'));
   }
 
-
-
   public function solicitudes_historic(Request $request)
   {
     $input1 = $request->startDate;
     $input2 = $request->endDate;
 
     if (empty($input1) || empty($input2)) {
-    	$date_fin = date('Y-m');
-    	$date_fin = $date_fin . '-01';
+      $fecha_f = new DateTime();
+      $fecha_f->modify('last day of this month');
+      $date_fin= $fecha_f->format('Y-m-d');
 
-      $date_inicio = date('Y-m', strtotime("-1 months"));
-
+      $date_inicio = date('Y-m');
     	$date_inicio = $date_inicio . '-01';
 
     	$res = DB::select('CALL payments_fechasolicitud(?, ?)', array($date_inicio, $date_fin));
