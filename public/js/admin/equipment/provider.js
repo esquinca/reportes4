@@ -8,10 +8,11 @@ $(".create_provider").on("click", function () {
   let provider_address = $('#provider_address').val();
   let provider_estate = $('#provider_estate').val();
   let provider_country = $('#provider_country').val();
+  let provider_post = $('#provider_postcode').val();
 
   var objData = $("#reg_provider").find("select,textarea, input").serialize();
 
-  if (provider_rfc === "" || provider_name === "" || provider_tf === "" || provider_address === "" || provider_estate === "" || provider_country === "") {
+  if (provider_rfc === "" || provider_name === "" || provider_post === "") {
     menssage_toast('Mensaje', '2', 'Por favor complete todos los campos con "*"' , '3000');
   }else{
     $.ajax({
@@ -169,8 +170,9 @@ $(".update_data").on("click", function () {
   let provider_address = $('#provider_address1').val();
   let provider_estate = $('#provider_estate1').val();
   let provider_country = $('#provider_country1').val();
+  let provider_post = $('#provider_postcode1').val();
 
-  if (provider_rfc === "" || provider_name === "" || provider_tf === "" || provider_address === "" || provider_estate === "" || provider_country === "") {
+  if (provider_rfc === "" || provider_name === "" || provider_post === "") {
     menssage_toast('Mensaje', '2', 'Por favor complete todos los campos con "*"' , '3000');
   }else{
     $.ajax({
